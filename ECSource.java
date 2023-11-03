@@ -1,17 +1,38 @@
-class Node<T> {
-  T val;
-  Node<T> next;
+//class Node<T> {
+  //T val;
+ // Node<T> next;
   
-  public Node(T val) {
-    this.val = val;
-    this.next = null;
-  }
-}
+ // public Node(T val) {
+  //  this.val = val;
+ //   this.next = null;
+ // }
+//}
 
 class ECSource {
   public static <T> T getNodeValue(Node<T> head, int index) {
     // todo - note the return type, but don't overthink it
-    return;
+    Node<T> temp = head;
+    Node<T> temp1 = head;
+    int lenght = 0;
+
+
+
+    while(temp1 != null){
+      lenght += 1;
+      temp1 = temp1.next;
+    }
+
+    if(index > lenght){
+      return null;
+    }
+    int p = 0;
+// finding the value based on the index
+    while(p < index){
+      temp = head.next;
+      p++;
+    }
+      assert temp != null;
+      return temp.val;
   }
   
   public static void main(String[] args) {
@@ -25,5 +46,6 @@ class ECSource {
     // banana -> mango -> kiwi
 
     System.out.println(ECSource.getNodeValue(node1, 1));
+    System.out.println(ECSource.getNodeValue(node1, 20));
   }
 }
